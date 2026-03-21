@@ -26,9 +26,12 @@ def move(dest,entry,name):
     file_exists = os.path.exists(dest + "/" + name)
     if file_exists:
         unique_name = makeUnique(dest, name)
-        os.rename(entry,unique_name)
+        dest_path = os.path.join(dest, unique_name)
+        #os.rename(entry,unique_name)
+    else:
+        dest_path = os.path.join(dest, unique_name)
     
-    shutil.move(entry,dest)
+    shutil.move(entry.path,dest_path)
 
 class MoveHandler(FileSystemEventHandler):
     def on_modified(self,event):
