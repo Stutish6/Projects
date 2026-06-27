@@ -1,2 +1,7 @@
 Time-Management/credentials.json
 Time-Management/token.json
+venv/
+.venv/
+__pycache__/
+*.pyc
+.env
